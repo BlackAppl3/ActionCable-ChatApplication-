@@ -1,0 +1,10 @@
+<div id = "message-container">
+   <% @info.each do |val| %>
+        <%= val.body %> 
+   <% end %>
+</div>   
+
+<%= form_for(@get_form_data, url: {"controller": "messages", "action": "create"}) do |f| %>
+     <%= f.text_field :body %>
+     <%= f.submit %>
+<% end %>
